@@ -7,6 +7,12 @@
  * @return {Element}
  */
 function createDivWithText(text) {
+
+    let div = document.createElement('div');
+
+    div.textContent = text;
+
+    return div;
 }
 
 /**
@@ -16,6 +22,11 @@ function createDivWithText(text) {
  * @return {Element}
  */
 function createAWithHref(hrefValue) {
+    let a = document.createElement('a');
+
+    a.setAttribute('href', hrefValue);
+
+    return a;
 }
 
 /**
@@ -25,6 +36,7 @@ function createAWithHref(hrefValue) {
  * @param {Element} where - куда вставлять
  */
 function prepend(what, where) {
+    where.appendChild(what);
 }
 
 /**
@@ -55,8 +67,8 @@ function findAllPSiblings(where) {
 function findError(where) {
     var result = [];
 
-    for (var i = 0; i < where.childNodes.length; i++) {
-        result.push(where.childNodes[i].innerText);
+    for (var i = 0; i < where.children.length; i++) {
+        result.push(where.children[i].innerText);
     }
 
     return result;
